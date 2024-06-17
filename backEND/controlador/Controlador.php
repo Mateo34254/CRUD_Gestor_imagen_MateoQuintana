@@ -1,6 +1,8 @@
 <?php
 require_once '../Modelo/ImagenDAO.php';
+
 $funcion = $_GET['funcion'];
+
 switch ($funcion){
     case "agregar":
         agregarImagen();
@@ -8,7 +10,7 @@ switch ($funcion){
     case "obtener":
         obtenerImagenes();
     break;
-
+    }
     function obtenerImagenes(){
         $resultado = (new Imagen())->obtenerImagenes();
         echo json_encode($resultado);
@@ -16,10 +18,9 @@ switch ($funcion){
     function agregarImagen(){    
         $nombre = $_POST['nombre'];
         $imagen = $_FILES['imagen'];
-        $resultado = (new Imagen())->agregarImagen($nombre, $imagen);
+        $resultado = (new Imagen())->IngresarImagenModel($nombre, $imagen);
         echo json_encode($resultado);
         
         
     }
 
-}
