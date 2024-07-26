@@ -5,7 +5,7 @@ class Imagen{
         $host = "localhost";
         $usr = "root";
         $pass = "";
-        $bd = "gestordeimagen";
+        $bd = "gestor_imagen";
         $puerto = 3306;
         $mysqli = new mysqli ($host, $usr, $pass, $bd, $puerto);
         return $mysqli;
@@ -20,15 +20,17 @@ class Imagen{
         $respuesta = $connection->query($sql);
         $id = $connection->insert_id;
         $RutaTemp = $imagen['tmp_name'];
-        move_uploaded_file($RutaTemp, "Imagenes/".$id.".". $extension);
+        move_uploaded_file($RutaTemp, __DIR__."/../controlador/Imagenes/".$id.".". $extension);
+      
         return $respuesta;
     }
-public function obtenerImagenes(){
-$sql= "SELECT * FROM imagen";
-$conexion = $this->connection();
-$resultado = $conexion->query($sql);
-return$resultado->fetch_all(MYSQLI_ASSOC);
-}
+        public function obtenerImagenes(){
+        $sql= "SELECT * FROM imagen";
+        $conexion = $this->connection();
+        $resultado = $conexion->query($sql);
+        $imagenes = $resultado->fetch_all(MYSQLI_ASSOC);    
+        return $imagenes;
+        }
 
 }
 
