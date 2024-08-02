@@ -8,6 +8,8 @@ switch ($funcion){
     case "agregar":
         agregarUsuario();
     break;
+    case "obtener":
+        obtenerUsuario();
 }
 function agregarUsuario(){
     $usuario = $_POST['usuario'];
@@ -15,4 +17,6 @@ function agregarUsuario(){
 
     $resultado = (new usuario())->agregarUsuarioModel($usuario, $contraseña);
     echo json_encode($resultado);
+
 }
+function
