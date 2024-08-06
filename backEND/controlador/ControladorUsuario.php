@@ -16,3 +16,4 @@ function registrarUsuario(){
     $resultado = (new usuario())->registrarUsuarioModel($usuario, $contraseña);
     echo json_encode($resultado);
 }
+?>

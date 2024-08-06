@@ -8,7 +8,7 @@ function agregarImagen(){
         formElement.onsubmit = async (e)=>{
         e.preventDefault()
         let formData = new FormData(formElement);
-        let url = "http://localhost/CRUD_Gestor_imagen_MateoQuintana/backEND/controlador/Controlador.php?funcion=agregar";
+        let url = "http://localhost/Crud_Gestor_imagen_MateoQuintana/backEND/controlador/Controlador.php?funcion=agregar";
     
     let config = {
         method:"POST",

@@ -2,7 +2,7 @@ window.onload=async ()=> {
     agregarUsuario();
 }
 function agregarUsuario(){
-    let formElement=document.querySelector("#loginForm");
+    let formElement=document.querySelector("#Form");
 
     formElement.onsubmit = async (e) => {
         e.preventDefault()
