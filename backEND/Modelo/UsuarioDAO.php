@@ -10,13 +10,15 @@ class usuario{
         $mysqli = new mysqli ($host, $usr, $pass, $bd, $puerto);
         return $mysqli;
     }
-function agregarUsuarioModel($usuario, $contraseña)
-{
+
+
+
+
+     function registrarUsuarioModel($usuario, $contraseña){
+    $sql = "INSERT INTO usuarios(usuario, contraseña) VALUES('$usuario', '$contraseña')";
     $connection = $this->connection();
-    $sql = "INSERT INTO usuarios(usuario, contraseña) values ('$usuario','$contraseña')";
     $respuesta = $connection->query($sql);
     return $respuesta;
-
 }
 
 }
